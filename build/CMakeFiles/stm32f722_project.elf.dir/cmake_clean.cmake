@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/stm32f722_project.elf.dir/src/USART.c.o"
-  "CMakeFiles/stm32f722_project.elf.dir/src/USART.c.o.d"
+  "CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.o"
+  "CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.o.d"
   "CMakeFiles/stm32f722_project.elf.dir/src/main.c.o"
   "CMakeFiles/stm32f722_project.elf.dir/src/main.c.o.d"
   "CMakeFiles/stm32f722_project.elf.dir/src/startup_stm32f722ze.s.o"

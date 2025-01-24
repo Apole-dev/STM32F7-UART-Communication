@@ -129,29 +129,29 @@ stm32f722_project.elf/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stm32f722_project.elf.dir/build.make CMakeFiles/stm32f722_project.elf.dir/build
 .PHONY : stm32f722_project.elf/fast
 
-src/USART.o: src/USART.c.o
-.PHONY : src/USART.o
+lib/USART/USART.o: lib/USART/USART.c.o
+.PHONY : lib/USART/USART.o
 
 # target to build an object file
-src/USART.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stm32f722_project.elf.dir/build.make CMakeFiles/stm32f722_project.elf.dir/src/USART.c.o
-.PHONY : src/USART.c.o
+lib/USART/USART.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stm32f722_project.elf.dir/build.make CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.o
+.PHONY : lib/USART/USART.c.o
 
-src/USART.i: src/USART.c.i
-.PHONY : src/USART.i
+lib/USART/USART.i: lib/USART/USART.c.i
+.PHONY : lib/USART/USART.i
 
 # target to preprocess a source file
-src/USART.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stm32f722_project.elf.dir/build.make CMakeFiles/stm32f722_project.elf.dir/src/USART.c.i
-.PHONY : src/USART.c.i
+lib/USART/USART.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stm32f722_project.elf.dir/build.make CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.i
+.PHONY : lib/USART/USART.c.i
 
-src/USART.s: src/USART.c.s
-.PHONY : src/USART.s
+lib/USART/USART.s: lib/USART/USART.c.s
+.PHONY : lib/USART/USART.s
 
 # target to generate assembly for a file
-src/USART.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stm32f722_project.elf.dir/build.make CMakeFiles/stm32f722_project.elf.dir/src/USART.c.s
-.PHONY : src/USART.c.s
+lib/USART/USART.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stm32f722_project.elf.dir/build.make CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.s
+.PHONY : lib/USART/USART.c.s
 
 src/main.o: src/main.c.o
 .PHONY : src/main.o
@@ -218,9 +218,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... stm32f722_project.elf"
-	@echo "... src/USART.o"
-	@echo "... src/USART.i"
-	@echo "... src/USART.s"
+	@echo "... lib/USART/USART.o"
+	@echo "... lib/USART/USART.i"
+	@echo "... lib/USART/USART.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

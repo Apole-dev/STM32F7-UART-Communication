@@ -78,7 +78,7 @@ void SEND_USART_DATA(uint8_t data){
 
 
 //RECIE DATA
-uint8_t RECIVE_USART_DAT(){
+uint8_t RECIVE_USART_DATA(){
   uint8_t data = 0;
 
   while ((USART1->ISR & (1<<5)) == 0) {

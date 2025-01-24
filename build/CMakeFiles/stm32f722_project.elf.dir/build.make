@@ -110,26 +110,26 @@ CMakeFiles/stm32f722_project.elf.dir/src/system_stm32f7xx.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/stm32f722_project.elf.dir/src/system_stm32f7xx.c.s"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/eren/Projects/stm_bare_metal/src/system_stm32f7xx.c -o CMakeFiles/stm32f722_project.elf.dir/src/system_stm32f7xx.c.s
 
-CMakeFiles/stm32f722_project.elf.dir/src/USART.c.o: CMakeFiles/stm32f722_project.elf.dir/flags.make
-CMakeFiles/stm32f722_project.elf.dir/src/USART.c.o: /home/eren/Projects/stm_bare_metal/src/USART.c
-CMakeFiles/stm32f722_project.elf.dir/src/USART.c.o: CMakeFiles/stm32f722_project.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/eren/Projects/stm_bare_metal/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/stm32f722_project.elf.dir/src/USART.c.o"
-	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/stm32f722_project.elf.dir/src/USART.c.o -MF CMakeFiles/stm32f722_project.elf.dir/src/USART.c.o.d -o CMakeFiles/stm32f722_project.elf.dir/src/USART.c.o -c /home/eren/Projects/stm_bare_metal/src/USART.c
+CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.o: CMakeFiles/stm32f722_project.elf.dir/flags.make
+CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.o: /home/eren/Projects/stm_bare_metal/lib/USART/USART.c
+CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.o: CMakeFiles/stm32f722_project.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/eren/Projects/stm_bare_metal/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.o"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.o -MF CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.o.d -o CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.o -c /home/eren/Projects/stm_bare_metal/lib/USART/USART.c
 
-CMakeFiles/stm32f722_project.elf.dir/src/USART.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/stm32f722_project.elf.dir/src/USART.c.i"
-	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/eren/Projects/stm_bare_metal/src/USART.c > CMakeFiles/stm32f722_project.elf.dir/src/USART.c.i
+CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.i"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/eren/Projects/stm_bare_metal/lib/USART/USART.c > CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.i
 
-CMakeFiles/stm32f722_project.elf.dir/src/USART.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/stm32f722_project.elf.dir/src/USART.c.s"
-	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/eren/Projects/stm_bare_metal/src/USART.c -o CMakeFiles/stm32f722_project.elf.dir/src/USART.c.s
+CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.s"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/eren/Projects/stm_bare_metal/lib/USART/USART.c -o CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.s
 
 # Object files for target stm32f722_project.elf
 stm32f722_project_elf_OBJECTS = \
 "CMakeFiles/stm32f722_project.elf.dir/src/startup_stm32f722ze.s.o" \
 "CMakeFiles/stm32f722_project.elf.dir/src/main.c.o" \
 "CMakeFiles/stm32f722_project.elf.dir/src/system_stm32f7xx.c.o" \
-"CMakeFiles/stm32f722_project.elf.dir/src/USART.c.o"
+"CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.o"
 
 # External object files for target stm32f722_project.elf
 stm32f722_project_elf_EXTERNAL_OBJECTS =
@@ -137,7 +137,7 @@ stm32f722_project_elf_EXTERNAL_OBJECTS =
 stm32f722_project.elf: CMakeFiles/stm32f722_project.elf.dir/src/startup_stm32f722ze.s.o
 stm32f722_project.elf: CMakeFiles/stm32f722_project.elf.dir/src/main.c.o
 stm32f722_project.elf: CMakeFiles/stm32f722_project.elf.dir/src/system_stm32f7xx.c.o
-stm32f722_project.elf: CMakeFiles/stm32f722_project.elf.dir/src/USART.c.o
+stm32f722_project.elf: CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.o
 stm32f722_project.elf: CMakeFiles/stm32f722_project.elf.dir/build.make
 stm32f722_project.elf: CMakeFiles/stm32f722_project.elf.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/eren/Projects/stm_bare_metal/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable stm32f722_project.elf"

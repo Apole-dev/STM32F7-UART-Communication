@@ -17,13 +17,14 @@ set(CMAKE_EXE_LINKER_FLAGS "${CPU_FLAGS} -T${CMAKE_SOURCE_DIR}/src/stm32f722ze.l
 # Include directories
 include_directories(
     ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/lib/USART
 )
 
 set(SOURCES
     src/startup_stm32f722ze.s
     src/main.c
     src/system_stm32f7xx.c
-    src/USART.c
+    lib/USART/USART.c
 )
 
 add_executable(${PROJECT_NAME}.elf ${SOURCES})

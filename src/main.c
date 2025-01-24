@@ -21,7 +21,7 @@ void LED_INIT(void);
 void GPIO_Init(void);
 void EXTI_Init(void);
 
-
+ 
 
 int main(void) {
  
@@ -34,7 +34,7 @@ int main(void) {
   
   while (1) {
      //SEND_USART_DATA('A');
-    char recived = RECIVE_USART_DAT();
+    char recived = RECIVE_USART_DATA();
     delay(1000000);
     ASSIGN_LED_USART(recived);
 

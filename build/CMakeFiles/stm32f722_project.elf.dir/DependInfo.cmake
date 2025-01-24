@@ -15,11 +15,12 @@ set(CMAKE_ASM_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "/home/eren/Projects/stm_bare_metal/include"
+  "/home/eren/Projects/stm_bare_metal/lib/USART"
   )
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/eren/Projects/stm_bare_metal/src/USART.c" "CMakeFiles/stm32f722_project.elf.dir/src/USART.c.o" "gcc" "CMakeFiles/stm32f722_project.elf.dir/src/USART.c.o.d"
+  "/home/eren/Projects/stm_bare_metal/lib/USART/USART.c" "CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.o" "gcc" "CMakeFiles/stm32f722_project.elf.dir/lib/USART/USART.c.o.d"
   "/home/eren/Projects/stm_bare_metal/src/main.c" "CMakeFiles/stm32f722_project.elf.dir/src/main.c.o" "gcc" "CMakeFiles/stm32f722_project.elf.dir/src/main.c.o.d"
   "/home/eren/Projects/stm_bare_metal/src/system_stm32f7xx.c" "CMakeFiles/stm32f722_project.elf.dir/src/system_stm32f7xx.c.o" "gcc" "CMakeFiles/stm32f722_project.elf.dir/src/system_stm32f7xx.c.o.d"
   )

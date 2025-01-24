@@ -5,13 +5,13 @@
 # compile C with arm-none-eabi-gcc
 ASM_DEFINES = 
 
-ASM_INCLUDES = -I/home/eren/Projects/stm_bare_metal/include
+ASM_INCLUDES = -I/home/eren/Projects/stm_bare_metal/include -I/home/eren/Projects/stm_bare_metal/lib/USART
 
 ASM_FLAGS = -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Wall -g -O0
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/eren/Projects/stm_bare_metal/include
+C_INCLUDES = -I/home/eren/Projects/stm_bare_metal/include -I/home/eren/Projects/stm_bare_metal/lib/USART
 
 C_FLAGS = -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Wall -g -O0 -DSTM32F722xx
 
