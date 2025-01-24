@@ -1,0 +1,3 @@
+/home/eren/Projects/stm_bare_metal/build/CMakeFiles/stm32f722_project.elf.dir
+/home/eren/Projects/stm_bare_metal/build/CMakeFiles/edit_cache.dir
+/home/eren/Projects/stm_bare_metal/build/CMakeFiles/rebuild_cache.dir

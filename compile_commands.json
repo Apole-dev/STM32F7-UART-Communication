@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/eren/Projects/stm_bare_metal",
+  "command": "arm-none-eabi-gcc  -I/home/eren/Projects/stm_bare_metal/include -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Wall -g -O0 -o CMakeFiles/stm32f722_project.elf.dir/src/startup_stm32f722ze.s.o -c /home/eren/Projects/stm_bare_metal/src/startup_stm32f722ze.s",
+  "file": "/home/eren/Projects/stm_bare_metal/src/startup_stm32f722ze.s",
+  "output": "CMakeFiles/stm32f722_project.elf.dir/src/startup_stm32f722ze.s.o"
+},
+{
+  "directory": "/home/eren/Projects/stm_bare_metal",
+  "command": "arm-none-eabi-gcc  -I/home/eren/Projects/stm_bare_metal/include -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Wall -g -O0 -DSTM32F722xx -o CMakeFiles/stm32f722_project.elf.dir/src/main.c.o -c /home/eren/Projects/stm_bare_metal/src/main.c",
+  "file": "/home/eren/Projects/stm_bare_metal/src/main.c",
+  "output": "CMakeFiles/stm32f722_project.elf.dir/src/main.c.o"
+},
+{
+  "directory": "/home/eren/Projects/stm_bare_metal",
+  "command": "arm-none-eabi-gcc  -I/home/eren/Projects/stm_bare_metal/include -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Wall -g -O0 -DSTM32F722xx -o CMakeFiles/stm32f722_project.elf.dir/src/system_stm32f7xx.c.o -c /home/eren/Projects/stm_bare_metal/src/system_stm32f7xx.c",
+  "file": "/home/eren/Projects/stm_bare_metal/src/system_stm32f7xx.c",
+  "output": "CMakeFiles/stm32f722_project.elf.dir/src/system_stm32f7xx.c.o"
+},
+{
+  "directory": "/home/eren/Projects/stm_bare_metal",
+  "command": "arm-none-eabi-gcc  -I/home/eren/Projects/stm_bare_metal/include -mcpu=cortex-m7 -mthumb -mfloat-abi=soft -Wall -g -O0 -DSTM32F722xx -o CMakeFiles/stm32f722_project.elf.dir/src/USART.c.o -c /home/eren/Projects/stm_bare_metal/src/USART.c",
+  "file": "/home/eren/Projects/stm_bare_metal/src/USART.c",
+  "output": "CMakeFiles/stm32f722_project.elf.dir/src/USART.c.o"
+}
+]
