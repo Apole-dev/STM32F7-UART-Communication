@@ -74,6 +74,7 @@ void SEND_USART_DATA(uint8_t data){
   
   }
   USART1->TDR = data;
+  
 }
 
 
