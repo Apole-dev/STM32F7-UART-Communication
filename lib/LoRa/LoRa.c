@@ -10,17 +10,30 @@
 #include <stdint.h>
 //#include "LoRa.h"
 
-//Register offsets
+// GPIO Register offsets
 #define GPIO_MODER_OFFSET   0x00
 #define GPIO_PUPDR_OFFSET   0x0C
 #define GPIO_IDR_OFFSET     0x10
 #define GPIO_ODR_OFFSET     0x14
 
+// USART Register offsets
+#define USART_CR1_OFFSET           0x00
+#define USART_BRR_OFFSET           0x0C
+#define USART_ISR_OFFSET           0x1C
+#define USART_RDR_OFFSET           0x24
+#define USART_TDR_OFFSET           0x28
 
 
+// GPIO MACRO Funcion
 #define GPIO_MODER(port) (*(volatile uint32_t*)(port + GPIO_MODER_OFFSET))
 #define GPIO_ODR(port)   (*(volatile uint32_t*)(port + GPIO_ODR_OFFSET))
 
+// USART MACRO Funcion
+#define USART_CR1(port) (*(volatile uint32_t*)(port + USART_CR1_OFFSET))
+#define USART_BRR(port) (*(volatile uint32_t*)(port + USART_BRR_OFFSET))
+#define USART_ISR(port) (*(volatile uint32_t*)(port + USART_ISR_OFFSET))
+#define USART_RDR(port) (*(volatile uint32_t*)(port + USART_RDR_OFFSET))
+#define USART_TDR(port) (*(volatile uint32_t*)(port + USART_TDR_OFFSET))
 
 
 void LoRa_INIT(){
@@ -40,7 +53,7 @@ void LoRa_SendCommand(LoRa_Command_Setup* myConfig){
     speedCommand |= (myConfig->pairityState << 6);  // 6-7-8
     command[3] = speedCommand;
 
-    if(myConfig->channelFrequency < 410 || myConfig->channelFrequency > 432) return;
+    if(myConfig->channelFrequency <= 410 || myConfig->channelFrequency >= 432) return;
     uint8_t channelCommand = 0;
     channelCommand |= ((myConfig->channelFrequency - 410) << 0); // 0-1-2-3-4
     command[4] = channelCommand;
@@ -59,53 +72,74 @@ void LoRa_SendCommand(LoRa_Command_Setup* myConfig){
 
 void LoRa_ReciveResponse(LoRa_Command_Setup* myConfig){
 
+    // TODO: READ DATA FROM USART PIN
+    uint8_t response[6];
+
+    // TODO: RXNE CONTROLL 
+    //
+
+    myConfig->paramState = response[0];
 }
 
-void LoRa_ModeSet(LoRa_Mode* mode,uint16_t port,uint16_t M0,uint16_t M1){
+void LoRa_ModeSet(LoRa_Mode* mode,LoRa_Configs* myConfig){
+
+    /* 
+     * FIX: CLEAR THE OUTPUTS BEFORE SET 
+     */
 
     switch (*mode) {
         case NORMAL:            // M0-M1 0-0
-            GPIO_MODER(port) |=  (1 << M0*2);
-            GPIO_MODER(port) |=  (1 << M1*2);
-            GPIO_ODR(port)   &= ~(1 << M0);
-            GPIO_ODR(port)   &= ~(1 << M1);
+            GPIO_MODER(myConfig->GPIO_PORT) |=  (1 << myConfig->M0*2);
+            GPIO_MODER(myConfig->GPIO_PORT) |=  (1 << myConfig->M1*2);
+            GPIO_ODR(myConfig->GPIO_PORT)   &= ~(1 << myConfig->M0);
+            GPIO_ODR(myConfig->GPIO_PORT)   &= ~(1 << myConfig->M1);
+            break;
+
         case WAKE_UP:           // M0-M1 1-0
-            GPIO_MODER(port) |=  (1 << M0*2);
-            GPIO_MODER(port) |=  (1 << M1*2);
-            GPIO_ODR(port)   |=  (1 << M0);
-            GPIO_ODR(port)   &= ~(1 << M1);
+            GPIO_MODER(myConfig->GPIO_PORT) |=  (1 << myConfig->M0*2);
+            GPIO_MODER(myConfig->GPIO_PORT) |=  (1 << myConfig->M1*2);
+            GPIO_ODR(myConfig->GPIO_PORT)   |=  (1 << myConfig->M0);
+            GPIO_ODR(myConfig->GPIO_PORT)   &= ~(1 << myConfig->M1);
+            break;
+
         case POWER_SAVING:      // M0-M1 0-1
-            GPIO_MODER(port) |=  (1 << M0*2);
-            GPIO_MODER(port) |=  (1 << M1*2);
-            GPIO_ODR(port)   &=  (1 << M0);
-            GPIO_ODR(port)   |=  (1 << M1);
+            GPIO_MODER(myConfig->GPIO_PORT) |=  (1 << myConfig->M0*2);
+            GPIO_MODER(myConfig->GPIO_PORT) |=  (1 << myConfig->M1*2);
+            GPIO_ODR(myConfig->GPIO_PORT)   &= ~(1 << myConfig->M0);
+            GPIO_ODR(myConfig->GPIO_PORT)   |=  (1 << myConfig->M1);
+            break;
+
         case SLEEP:             // M0-M1 1-1
-            GPIO_MODER(port) |=  (1 << M0*2);
-            GPIO_MODER(port) |=  (1 << M1*2);
-            GPIO_ODR(port)   |=  (1 << M0);
-            GPIO_ODR(port)   |=  (1 << M1);
+            GPIO_MODER(myConfig->GPIO_PORT) |=  (1 << myConfig->M0*2);
+            GPIO_MODER(myConfig->GPIO_PORT) |=  (1 << myConfig->M1*2);
+            GPIO_ODR(myConfig->GPIO_PORT)   |=  (1 << myConfig->M0);
+            GPIO_ODR(myConfig->GPIO_PORT)   |=  (1 << myConfig->M1);
+            break;
     }
 }
 
-bool LoRa_ReadOperatingParams(LoRa_Mode* currentMode,LoRa_Command_Setup* myConfig){
 
-    if (*currentMode != SLEEP & myConfig->baudRate == BAURD_RATE_9600 & myConfig->pairityState == PAIRITY_NONE)
+
+bool LoRa_ReadOperatingParams(LoRa_Mode* currentMode,LoRa_Command_Setup* myCommand,LoRa_Configs* myConfig){
+
+    if (*currentMode != SLEEP & myCommand->baudRate == BAURD_RATE_9600 & myCommand->pairityState == PAIRITY_NONE)
+        return false;
+
+
+    return true;
+}
+
+bool LoRa_ReadVersionNumber(LoRa_Mode* currentMode, LoRa_Command_Setup* myCommand,LoRa_Configs* myConfig){
+
+    if (*currentMode != SLEEP & myCommand->baudRate == BAURD_RATE_9600 & myCommand->pairityState == PAIRITY_NONE)
         return false;
 
     return true;
 }
 
-bool LoRa_ReadVersionNumber(LoRa_Mode* currentMode, LoRa_Command_Setup* myConfig){
+bool LoRa_Reset(LoRa_Mode* currentMode,LoRa_Command_Setup* myCommand,LoRa_Configs* myConfig){
 
-    if (*currentMode != SLEEP & myConfig->baudRate == BAURD_RATE_9600 & myConfig->pairityState == PAIRITY_NONE)
-        return false;
-
-    return true;
-}
-
-bool LoRa_Reset(LoRa_Mode* currentMode,LoRa_Command_Setup* myConfig){
-
-    if (*currentMode != SLEEP & myConfig->baudRate == BAURD_RATE_9600 & myConfig->pairityState == PAIRITY_NONE)
+    if (*currentMode != SLEEP & myCommand->baudRate == BAURD_RATE_9600 & myCommand->pairityState == PAIRITY_NONE)
         return false;
 
     return true;

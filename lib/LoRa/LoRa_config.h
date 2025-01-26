@@ -78,12 +78,21 @@ typedef struct{
 
 }LoRa_Command_Setup;
 
+typedef struct{
+
+    uint8_t M0;
+    uint8_t M1;
+    uint32_t GPIO_PORT;    //PORT FOR M0 & M1
+    uint32_t USART_PIN;    //COMMUNUCATION USART_PIN 
+    
+}LoRa_Configs;
+
 void LoRa_INIT();
 void LoRa_SendCommand(LoRa_Command_Setup*);
 void LoRa_ReciveResponse(LoRa_Command_Setup*);
-void LoRa_ModeSet(LoRa_Mode*,uint16_t,uint16_t,uint16_t);
-bool LoRa_ReadOperatingParams(LoRa_Mode* ,LoRa_Command_Setup*);
-bool LoRa_ReadVersionNumber(LoRa_Mode*, LoRa_Command_Setup*);
-bool LoRa_Reset(LoRa_Mode*,LoRa_Command_Setup*);
+void LoRa_ModeSet(LoRa_Mode*,LoRa_Configs*);
+bool LoRa_ReadOperatingParams(LoRa_Mode* ,LoRa_Command_Setup*,LoRa_Configs*);
+bool LoRa_ReadVersionNumber(LoRa_Mode*, LoRa_Command_Setup*,LoRa_Configs*);
+bool LoRa_Reset(LoRa_Mode*,LoRa_Command_Setup*,LoRa_Configs*);
 
 #endif // !LORA_CONFIG
