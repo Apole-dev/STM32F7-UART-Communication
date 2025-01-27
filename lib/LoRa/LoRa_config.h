@@ -13,9 +13,9 @@
 #include <stdbool.h>
 
 
-const uint8_t LORA_READ_PARAM[3] = {0xC1,0xC1,0xC1} ;
-const uint8_t LORA_READ_VERSION[3] = {0xC3,0xC3,0xC3};
-const uint8_t LORA_RESET[3] = {0xC4,0xC4,0xC4};
+const uint8_t LORA_READ_PARAM   = 0xC1 ;
+const uint8_t LORA_READ_VERSION = 0xC3;
+const uint8_t LORA_RESET        = 0xC4;
 
 typedef enum{
     NORMAL,
@@ -89,10 +89,10 @@ typedef struct{
 
 void LoRa_INIT();
 void LoRa_SendCommand(LoRa_Command_Setup*);
-void LoRa_ReciveResponse(LoRa_Command_Setup*);
+void LoRa_ReciveResponse(LoRa_Configs*,uint8_t*);
 void LoRa_ModeSet(LoRa_Mode*,LoRa_Configs*);
-bool LoRa_ReadOperatingParams(LoRa_Mode* ,LoRa_Command_Setup*,LoRa_Configs*);
-bool LoRa_ReadVersionNumber(LoRa_Mode*, LoRa_Command_Setup*,LoRa_Configs*);
-bool LoRa_Reset(LoRa_Mode*,LoRa_Command_Setup*,LoRa_Configs*);
+bool LoRa_ReadOperatingParams(LoRa_Mode* ,LoRa_Command_Setup*,LoRa_Configs*,uint8_t*);
+bool LoRa_ReadVersionNumber(LoRa_Mode*, LoRa_Command_Setup*,LoRa_Configs*,uint8_t*);
+bool LoRa_Reset(LoRa_Mode*,LoRa_Command_Setup*,LoRa_Configs*,uint8_t*);
 
 #endif // !LORA_CONFIG

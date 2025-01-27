@@ -23,6 +23,10 @@
 #define USART_RDR_OFFSET           0x24
 #define USART_TDR_OFFSET           0x28
 
+// Frequency range validation
+#define LORA_MIN_FREQ 410
+#define LORA_MAX_FREQ 432
+
 
 // GPIO MACRO Funcion
 #define GPIO_MODER(port) (*(volatile uint32_t*)(port + GPIO_MODER_OFFSET))
@@ -55,7 +59,7 @@ void LoRa_SendCommand(LoRa_Command_Setup* myConfig){
 
     if(myConfig->channelFrequency <= 410 || myConfig->channelFrequency >= 432) return;
     uint8_t channelCommand = 0;
-    channelCommand |= ((myConfig->channelFrequency - 410) << 0); // 0-1-2-3-4
+    channelCommand |= ((myConfig->channelFrequency - LORA_MIN_FREQ) << 0); // 0-1-2-3-4
     command[4] = channelCommand;
 
     uint8_t optionCommand = 0;
@@ -70,15 +74,18 @@ void LoRa_SendCommand(LoRa_Command_Setup* myConfig){
 
 }
 
-void LoRa_ReciveResponse(LoRa_Command_Setup* myConfig){
+void LoRa_ReciveResponse(LoRa_Configs* myConfig,uint8_t* response ){
+    
+    if (!response) return ;
+    // uint8_t response[6]; //Alternate option
 
-    // TODO: READ DATA FROM USART PIN
-    uint8_t response[6];
+    //USART->ISR RXNE(: Read data register not empty) BIT 5
+    //Wait until data arrive
 
-    // TODO: RXNE CONTROLL 
-    //
-
-    myConfig->paramState = response[0];
+    for (int8_t i=0; i<6; i++) {
+        while (!(USART_ISR(myConfig->USART_PIN) & (1 << 5))); // Wait for RXNE flag
+        response[i] =USART_RDR(myConfig->USART_PIN);
+    }
 }
 
 void LoRa_ModeSet(LoRa_Mode* mode,LoRa_Configs* myConfig){
@@ -120,27 +127,50 @@ void LoRa_ModeSet(LoRa_Mode* mode,LoRa_Configs* myConfig){
 
 
 
-bool LoRa_ReadOperatingParams(LoRa_Mode* currentMode,LoRa_Command_Setup* myCommand,LoRa_Configs* myConfig){
+bool LoRa_ReadOperatingParams(LoRa_Mode* currentMode,LoRa_Command_Setup* myCommand,LoRa_Configs* myConfig,uint8_t* response){
 
-    if (*currentMode != SLEEP & myCommand->baudRate == BAURD_RATE_9600 & myCommand->pairityState == PAIRITY_NONE)
+    // Validate parameters and mode
+    if (!currentMode || !myCommand || !myConfig || !response ||
+        *currentMode != SLEEP ||
+        myCommand->baudRate != BAURD_RATE_9600 ||
+        myCommand->pairityState != PAIRITY_NONE) {
         return false;
+    }
 
 
     return true;
 }
 
-bool LoRa_ReadVersionNumber(LoRa_Mode* currentMode, LoRa_Command_Setup* myCommand,LoRa_Configs* myConfig){
+bool LoRa_ReadVersionNumber(LoRa_Mode* currentMode, LoRa_Command_Setup* myCommand,LoRa_Configs* myConfig,uint8_t* response){
 
-    if (*currentMode != SLEEP & myCommand->baudRate == BAURD_RATE_9600 & myCommand->pairityState == PAIRITY_NONE)
+    // Validate parameters and mode
+    if (!currentMode || !myCommand || !myConfig || !response ||
+        *currentMode != SLEEP ||
+        myCommand->baudRate != BAURD_RATE_9600 ||
+        myCommand->pairityState != PAIRITY_NONE) {
         return false;
+    }
+
+    for (uint8_t i=0; i<3 i++) {
+        USART_TDR(myConfig->USART_PIN) = LORA_READ_VERSION;
+    }
+    
+    // TODO: ADD DELAY TO GET RIGHT RESPONSE NOT SURE!  
+    LoRa_ReciveResponse(myConfig,response);
 
     return true;
 }
 
-bool LoRa_Reset(LoRa_Mode* currentMode,LoRa_Command_Setup* myCommand,LoRa_Configs* myConfig){
+bool LoRa_Reset(LoRa_Mode* currentMode,LoRa_Command_Setup* myCommand,LoRa_Configs* myConfig,uint8_t* response){
 
-    if (*currentMode != SLEEP & myCommand->baudRate == BAURD_RATE_9600 & myCommand->pairityState == PAIRITY_NONE)
+    // Validate parameters and mode
+    if (!currentMode || !myCommand || !myConfig || !response ||
+        *currentMode != SLEEP ||
+        myCommand->baudRate != BAURD_RATE_9600 ||
+        myCommand->pairityState != PAIRITY_NONE) {
         return false;
+    }
+
 
     return true;
 }
