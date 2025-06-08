@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BackendCodeEditorMiscSettings">
+    <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
+    <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+  </component>
+  <component name="CMakePresetLoader"><![CDATA[{
+  "useNewFormat": true
+}]]></component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Default" ENABLED="true" GENERATION_DIR="." />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c6d798b6-6fb0-40d1-a34c-3861870b73f8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.cache/clangd/index/USART.c.50950D306F9F6A41.idx" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/clangd/index/USART.c.50950D306F9F6A41.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.cache/clangd/index/cmsis_compiler.h.645AD4DFA8B6F3F7.idx" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/clangd/index/cmsis_compiler.h.645AD4DFA8B6F3F7.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.cache/clangd/index/cmsis_gcc.h.027DC63D6F5C2254.idx" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/clangd/index/cmsis_gcc.h.027DC63D6F5C2254.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.cache/clangd/index/cmsis_version.h.26E92E97D09EC6E4.idx" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/clangd/index/cmsis_version.h.26E92E97D09EC6E4.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.cache/clangd/index/core_cm7.h.E15D2C5C72FEFAB7.idx" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/clangd/index/core_cm7.h.E15D2C5C72FEFAB7.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.cache/clangd/index/main.c.5B35DC221E2D257D.idx" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/clangd/index/main.c.5B35DC221E2D257D.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.cache/clangd/index/mpu_armv7.h.70FC53D2952E4BB6.idx" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/clangd/index/mpu_armv7.h.70FC53D2952E4BB6.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.cache/clangd/index/stm32f722xx.h.07A7B3E52CC3BE9F.idx" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/clangd/index/stm32f722xx.h.07A7B3E52CC3BE9F.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.cache/clangd/index/stm32f7xx.h.916A47FEE47D02ED.idx" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/clangd/index/stm32f7xx.h.916A47FEE47D02ED.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.cache/clangd/index/system_stm32f7xx.c.8A15CAAC7D29793C.idx" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/clangd/index/system_stm32f7xx.c.8A15CAAC7D29793C.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.cache/clangd/index/system_stm32f7xx.h.504A296589CE1605.idx" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/clangd/index/system_stm32f7xx.h.504A296589CE1605.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.cache/clangd/index/usart.h.28F2AAC13268E363.idx" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/clangd/index/usart.h.28F2AAC13268E363.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.30.5/CMakeASMCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.30.5/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.30.5/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.30.5/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/stm32f722_project.elf.dir/ASM.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/stm32f722_project.elf.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/stm32f722_project.elf.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/stm32f722_project.elf.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/stm32f722_project.elf.dir/compiler_depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/stm32f722_project.elf.dir/compiler_depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/stm32f722_project.elf.dir/compiler_depend.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/stm32f722_project.elf.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/stm32f722_project.elf.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/stm32f722_project.elf.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/stm32f722_project.elf.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/stm32f722_project.elf.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2024" />
+    <option name="minorVersion" value="3.1.1" />
+    <option name="productBranch" value="Classic" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2wEHRHMOnnxy68NCgoS4weN1cl5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.west.config.association.type.startup.service": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/eren/Projects/stm_bare_metal",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.cidr.embedded.config",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c6d798b6-6fb0-40d1-a34c-3861870b73f8" name="Changes" comment="" />
+      <created>1745599802630</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1745599802630</updated>
+      <workItem from="1745599803892" duration="133000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
+  </component>
+</project>
